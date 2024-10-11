@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:rampatra/wedding-website.git"
+    "url": "git+ssh://git@github.com:sico93/wedding-website.git"
   },
   "keywords": [
     "wedding",
     "template",
     "website template"
   ],
-  "author": "Ram Patra",
+  "author": "Fabian Lange",
   "license": "GPL-3.0",
-  "homepage": "https://github.com/rampatra/wedding-website",
+  "homepage": "https://github.com/sico93/wedding-website",
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
