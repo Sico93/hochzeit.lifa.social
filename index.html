@@ -23,6 +23,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <script>
         // load css files from CDN if local node_modules fail
@@ -58,6 +59,7 @@
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body id="top">
@@ -353,7 +355,9 @@
             Die <a href="https://www.braugenosse.de" target="_blank">Bernauer Braugenossenschaft</a>
             befindet sich auf dem Gelände des Gutshauses Börnicke.
             <br>
-            Börnicke ist ca 10 min dem Auto bzw. 15 Min mit dem Rad von Bernau entfernt.<br><br>
+<!--            <div id="osm" style="height: 400px;"></div>-->
+
+        Börnicke ist ca 10 min dem Auto bzw. 15 Min mit dem Rad von Bernau entfernt.<br><br>
             <h5>Für diejenigen ohne Auto:</h5>
             Es wird genügend Leute geben, die sicher den ein oder anderen Platz frei haben.
             <br><br>
@@ -380,18 +384,13 @@
                 </div>
                 <div id="map-content" class="pointer-events-auto">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <h5>Gutshof Börnicke - Bernauer Braugenossenschaft e.G.</h5>
                             <p>Ernst-Thälmann-Str. 2c, 16321 Bernau bei Berlin</p>
                         </div>
-                        <div class="col-md-6">
-                            <h5>Mr. Amit Roy</h5>
-                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+91 9412345678</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+91 7123456789</a></p>
-                        </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col-md-6" style="padding: 5px;">
+                        <div class="col-md-12" style="padding: 5px;">
                             <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
                                 map</a>
                         </div>
@@ -494,7 +493,7 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+        src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <!-- Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {

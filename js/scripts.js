@@ -141,14 +141,30 @@ $(document).ready(function () {
 
 
     /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    $(document).ready(function() {
+        /********************** Toggle Map Content **********************/
+        $('#btn-show-map').click(function () {
+            $('#map-content').addClass('toggle-map-content');
+            $('#btn-show-content').removeClass('toggle-map-content');
+            $('#map-canvas').show(); // Zeige den Kartencontainer
+
+            initLeafletMap(); // Initialisiere die Karte
+        });
+
+        $('#btn-show-content').click(function () {
+            $('#map-content').removeClass('toggle-map-content');
+            $('#btn-show-content').addClass('toggle-map-content');
+            $('#map-canvas').hide(); // Verberge den Kartencontainer
+        });
     });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
+//    $('#btn-show-map').click(function () {
+//        $('#map-content').toggleClass('toggle-map-content');
+//        $('#btn-show-content').toggleClass('toggle-map-content');
+//    });
+//    $('#btn-show-content').click(function () {
+//        $('#map-content').toggleClass('toggle-map-content');
+//        $('#btn-show-content').toggleClass('toggle-map-content');
+//    });
 
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
@@ -213,35 +229,41 @@ $(document).ready(function () {
 });
 
 /********************** Extras **********************/
+// Open Street Map
+//function initOSM(){
+//    // Karte initialisieren
+//    var map = L.map('map').setView([52.68269589093356, 13.402803010929826], 13); // Boernicke
+//
+//    // OpenStreetMap-Kacheln hinzufügen
+//    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//    attribution: '&copy; OpenStreetMap-Mitwirkende'
+//    }).addTo(map);
+//
+//    // Marker hinzufügen (optional)
+//    L.marker([52.68269589093356, 13.402803010929826]).addTo(map)
+//    .bindPopup('Veranstaltungsort')
+//    .openPopup();
+//}
 
-// Google map
-function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
+var mapInitialized = false;
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
+function initLeafletMap() {
+    if (!mapInitialized) {
+        var location = [52.6621865, 13.6346680]; // [Breitengrad, Längengrad]
+        var map = L.map('map-canvas').setView(location, 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap-Mitwirkende'
+        }).addTo(map);
+
+        L.marker(location).addTo(map)
+            .bindPopup('Gutshof Börnicke - Bernauer Braugenossenschaft e.G.')
+            .openPopup();
+
+        mapInitialized = true;
+    }
 }
 
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
-    });
-}
 
 // alert_markup
 function alert_markup(alert_type, msg) {
