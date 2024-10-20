@@ -140,31 +140,56 @@ $(document).ready(function () {
     $('.player').YTPlayer();
 
 
-    /********************** Toggle Map Content **********************/
+    /********************** Map Content **********************/
     $(document).ready(function() {
+        var mapInitialized = false;
+        var map; // Karte außerhalb der Funktion deklarieren
+
+        function initLeafletMap() {
+            if (!mapInitialized) {
+                var location = [52.6621865, 13.6346680];
+                map = L.map('map-canvas').setView(location, 15);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap-Mitwirkende'
+                }).addTo(map);
+
+                L.marker(location).addTo(map)
+                    .bindPopup('Gutshof Börnicke - Bernauer Braugenossenschaft e.G.')
+                    .openPopup();
+
+                mapInitialized = true;
+            } else {
+                // Aktualisiere die Größe der Karte, falls sie bereits initialisiert wurde
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 400);
+            }
+        }
+
         /********************** Toggle Map Content **********************/
         $('#btn-show-map').click(function () {
+            // Blende den Info-Content aus
             $('#map-content').addClass('toggle-map-content');
+            // Blende den "Info anzeigen" Button ein
             $('#btn-show-content').removeClass('toggle-map-content');
-            $('#map-canvas').show(); // Zeige den Kartencontainer
+            // Ändere die Höhe des Kartencontainers, um die Karte einzublenden
+            $('#map-canvas').css('height', '500px');
 
-            initLeafletMap(); // Initialisiere die Karte
+            // Initialisiere oder aktualisiere die Karte
+            initLeafletMap();
         });
 
         $('#btn-show-content').click(function () {
+            // Blende den Info-Content ein
             $('#map-content').removeClass('toggle-map-content');
+            // Blende den "Info anzeigen" Button aus
             $('#btn-show-content').addClass('toggle-map-content');
-            $('#map-canvas').hide(); // Verberge den Kartencontainer
+            // Setze die Höhe des Kartencontainers auf 0, um die Karte auszublenden
+            $('#map-canvas').css('height', '0');
         });
     });
-//    $('#btn-show-map').click(function () {
-//        $('#map-content').toggleClass('toggle-map-content');
-//        $('#btn-show-content').toggleClass('toggle-map-content');
-//    });
-//    $('#btn-show-content').click(function () {
-//        $('#map-content').toggleClass('toggle-map-content');
-//        $('#btn-show-content').toggleClass('toggle-map-content');
-//    });
+
 
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
