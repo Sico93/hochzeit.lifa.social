@@ -148,7 +148,7 @@ $(document).ready(function () {
         function initLeafletMap() {
             if (!mapInitialized) {
                 var location = [52.6621865, 13.6346680];
-                map = L.map('map-canvas').setView(location, 15);
+                map = L.map('map-canvas').setView(location, 13);
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; OpenStreetMap-Mitwirkende'
@@ -275,7 +275,7 @@ var mapInitialized = false;
 function initLeafletMap() {
     if (!mapInitialized) {
         var location = [52.6621865, 13.6346680]; // [Breitengrad, Längengrad]
-        var map = L.map('map-canvas').setView(location, 15);
+        var map = L.map('map-canvas').setView(location, 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap-Mitwirkende'
