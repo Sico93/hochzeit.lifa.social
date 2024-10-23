@@ -4,7 +4,7 @@
 *.iws
 /out/
 .idea_modules/
-node_modules/
+41fa491e292747b7136f83537bd2177d284fc688/node_modules/
 atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties

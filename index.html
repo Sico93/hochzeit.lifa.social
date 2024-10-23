@@ -1,577 +1,146 @@
-<!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="de"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang="de"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang="de"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="de"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Lisa & Fabian heiraten!</title>
-    <meta name="description" content="Zu unserem großen Tag wollen wir euch gern einladen!">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Lisa & Fabian heiraten">
-    <meta property="og:description" content="Zu unserem großen Tag wollen wir euch gern einladen!">
-    <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-min.jpeg">
-    <meta property="og:type" content="website">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Password Protected</title>
 
-    <script>
-        // load css files from CDN if local node_modules fail
-        function loadCssFromCDN(css) {
-            // create new link tag
-            const link = document.createElement('link');
-            if (css === 'animate.css') {
-                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
-            } else if (css === 'font-awesome.css') {
-                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+
+        <style>
+            *,
+            *:after,
+            *:before {
+                box-sizing: border-box;
             }
-            link.rel = 'stylesheet';
-
-            // add link tag to head section
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-
-        // load js files from CDN if local node_modules fail
-        function loadJsFromCDN(js) {
-            if (js === 'waypoints.js') {
-                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
-            } else if (js === 'jquery.js') {
-                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            body,
+            html {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-weight: 300;
+                font-size: 16px;
+                background: #f2f2f2;
+                color: #2D3737;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100%;
             }
-        }
-    </script>
 
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" href="css/flexslider.css">
-    <link rel="stylesheet" href="css/styles.min.css">
-    <link rel="stylesheet" href="css/queries.css">
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-</head>
-<body id="top">
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
-<section class="hero">
-    <section class="navigation">
-        <header>
-            <div class="header-content">
-                <div class="logo"><a href="#"><img src="img/logo.png" alt="LiFa Hochzeit - Logo"></a></div>
-                <div class="header-nav">
-                    <nav>
-                        <ul class="primary-nav">
-                            <li><a href="#intro">Kennenlern-Reise</a></li>
-                            <li><a href="#events">Events</a></li>
-                            <li><a href="#map" class="login">Veranstaltungsort</a></li>
-                            <li><a href="#unterkunft">Unterkünfte</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                            <li><a href="#eng-pics">Bilder</a></li>
-                        </ul>
-                        <ul class="member-actions">
-                            <!--<li><a href="#rsvp" class="btn-white btn-small">Rückmeldung</a></li>-->
-                        </ul>
-                    </nav>
-                </div>
-                <div class="navicon">
-                    <a class="nav-toggle" href="#"><span></span></a>
-                </div>
-            </div>
-        </header>
-    </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="hero-content text-center">
-                    <h1>LiFa Hochtiet!</h1>
-                    <p class="intro">Lizzie & Fabian<br> heiraten!</p>
-                </div>
-            </div>
-        </div>
-        <!--<div class="row">
-            <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
-                                                           class="btn btn-accent btn-large rsvp-btn">Rückmeldung</a></div>
-            <div class="col-sm-4 hidden-xs"></div>
-        </div>-->
-    </div>
-    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
-</section>
+            .protected {
+                background: #fff;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                border-radius: 3px;
+                min-width: 500px;
 
-<section id="invitation" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p> <q><i>Das sind die Momente,
-                    wo ich, wenn ich es könnte,
-                    mir wünsche würde, dass sie nie vergehen.</i></q> <br>
-                    <a href="https://youtu.be/T9YwNyX6Bes?si=RMpHoO8yFxZOcRMm&t=32">(Dritte Wahl - Zeit bleib stehen!)</a>
-                </p>
+            }
+            .protected__content {
+                padding: 24px 28px;
+            }
+            .protected__content__heading {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0 0 12px;
+                line-height: 1;
+            }
+            .protected__alert {
+                display: none;
+                border-bottom: 1px solid transparent;
+                border-radius: 3px 3px 0 0;
+                padding: 12px 14px;
+                color: #a94442;
+                background-color: #f2dede;
+                border-color: #ebccd1;
+            }
+            .protected__content__input {
+                display: block;
+                border: solid 1px #ccc;
+                padding: 12px 14px;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                font-size: 16px;
+                width: 100%;
+                border-radius: 3px;
+
+                margin-bottom: 12px;
+            }
+            .protected__content__input:focus {
+                outline: none;
+                border-color: #228843;
+            }
+            .protected__content__btn {
+                background-color: #228843;
+                border-radius: 3px;
+                cursor: pointer;
+                border: none;
+                color: #fff;
+                padding: 12px 14px;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+
+            }
+            .protected__content__btn:hover {
+                background-color: #1C6D36;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="protected">
+            <div class="protected__alert" data-id="alert">You entered the wrong password</div>
+            <div class="protected__content">
+                <h1 class="protected__content__heading">You need a password to continue</h1>
+                <input class="protected__content__input" data-id="password" type="password" placeholder="password"/>
+                <button data-id="button" type="button" class="protected__content__btn">Continue</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>Wir heiraten!</h3>
-                <p>Am 12. April 2025 wollen wir uns das Ja-Wort geben und würden uns freuen, wenn ihr dabei seid!</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section id="intro">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">Unsere gemeinsame Reise</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/Lisa6_white.png" class="wp1"></div>
-            <div class="col-md-6">
-                <p>
-                    Eigentlich waren wir beide nicht auf der Suche, aber unsere Freunde haben das Potenzial erkannt und nicht locker lassen - und das mit Erfolg!<br>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
+        <script type="text/javascript">
+            "use strict"
+            var button = document.querySelectorAll('[data-id="button"]')
+            var password = document.querySelectorAll('[data-id="password"]')
 
-                    Nur ein halbes Jahr nachdem es gefunkt hat, haben wir einen gebrauchten Kastenwagen gekauft und ihn über die Jahre hinweg zum Camper umgebaut.<br>
-                    Man wächst ja bekanntlich mit seinen Aufgaben...<br>
-                    Seitdem sind wir regelmäßig mit <a href="https://pixelfed.de/lifawagen">Bubbles On Tour.</a>
-                    Wir haben uns gegenseitig Orte voller schöner Erinnerungen gezeigt - in Frankreich und in Dänemark.
-                    Aber vor allem wir haben viele neue "LiFa"-Lieblingsorte entdeckt.<br>
-                    Und selbst nach 9 Wochen und 5.994 km auf 7m² Wohnraum quer durch den Westbalkan gingen wir uns nicht auf den Keks.<br>
-                    Da war klar: Wir gehen gemeinsam auf "Reise" - und zwar für immer!<br>
-                    <br>
-                    Wir haben viel gesehen und noch viel vor.<br>
-                    Aber eines steht fest:<br>
-                    <strong>Da ist ganz viel <em>LIEBE</em> - und ein kleines bisschen Chaos.</strong>
-                </p>
-            </div>
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/Fabi6_white.png" class="wp2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/Lisa6_white.png" class="wp8"></div>
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/Fabi6_white.png" class="wp9"></div>
-        </div>
-    </div>
-</section>
+            function login(secret) {
+                var hash = sha1(secret)
+                var url = hash + "/index.html"
+                var alert = document.querySelectorAll('[data-id="alert"]')
 
-<section class="events section-padding" id="events">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="header">Events</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
-                <div class="wp3">
-                    <p><strong>23. März 2025</strong></p>
+                var request = new XMLHttpRequest()
+                request.open('GET', url, true)
 
-                    <h5>Polter-Frühshoppen <span class="time">11 - 20 Uhr</span></h5>
-                    <p>Wir möchten gern mit euch einen Polter-Frühshoppen veranstalten!
-                        Bringt Porzellan und gute Laune auf den Hof Kenning-Feldmann nach Halverde mit und begeht mit uns den Brauch des Polterns!
-                        <br>Scherben bringen Glück &#128521;</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
-                <div class="wp4">
-                    <p><strong>12. April 2025</strong></p>
+                request.onload = function () {
+                    if (request.status >= 200 && request.status < 400) {
+                        window.location = url
+                    } else {
+                        parent.location.hash = hash
+                        alert[0].style.display = 'block'
+                        password[0].setAttribute('placeholder', 'Incorrect password')
+                        password[0].value = ''
+                    }
+                }
+                request.onerror = function () {
+                    parent.location.hash = hash
+                    alert[0].style.display = 'block'
+                    password[0].setAttribute('placeholder', 'Incorrect password')
+                    password[0].value = ''
+                }
+                request.send()
+            }
 
-                    <h5>Trauung <span class="time">13 Uhr</span></h5>
-                    <p>Um 13 Uhr findet die Trauung im Standesamt Bernau bei Berlin statt.
-                    Aufgrund der begrenzten Platzzahl wurden individuelle Einladungen verschickt. <br>
-                    Alle anderen Gäste kommen bitte um 15 Uhr direkt zur Hochzeitslocation</p>
-                </div>
-                <div class="wp6">
-                    <h5>Party <span class="time">ab 15 Uhr</span></h5>
-                    <p>Ab 15 Uhr treffen wir uns bei den Braugenossen in Börnicke zur Party!
-                        Dort starten wir mit einem Sektempfang. <br>
-                        Freut euch auf: tolles Essen (Kaffee & Kuchen, Abendessen und Mitternachtssnack), lokale Biere und andere Getränke, eine Brauereiführung (für Interessierte) und natürlich eine ausgelassene Feier.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row section-padding">
-            <div class="col-md-4 col-md-offset-4 text-center">
-                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
-                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code / Kleidung
-                </a>
-            </div>
-        </div>
-    </div>
+            button[0].addEventListener("click", function () {
+                login(password[0].value)
+            })
 
-    <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <h3 class="text-center section-padding">Ugh... dress codes?</h3>
-                    <h5>Poltern <span class="time">23.03.2025 ab 11 Uhr</span></h5>
-                    <p>
-                        <strong>Leger</strong>
-                        <br>
-                        Wir möchten mit euch bei einem lockeren Frühschoppen poltern.<br>
-                        Also alles ganz entspannt, lasst eure schicken Anzüge und Kleider an diesem Tag gern noch im Schrank.<br>
-                        Bitte denkt, je nach Wetter, auch an wärmere Kleidung.
-                    </p>
-                    <h5>Hochzeitsparty <span class="time">12.04.2025 ab 15 Uhr</span></h5>
-                    <p>
-                        <strong>Schick & leger</strong>
-                        <br>
-                        Wir möchten auf dem Gelände der Braugenossen eine entspannte Party mit euch feiern. <br>
-                        Kommt gerne schick und leger - elegante Abendgarderobe ist in dem Kontext etwas drüber. <br>
-                        Das Gelände der Braugenossen ist groß und abends wird es auch Feuerschalen geben. Bringt also auch Kleidung für draußen mit.
-                    </p>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-</section>
-
-<section id="map" class="section-padding">
-    <!-- Kartencontainer -->
-    <div id="map-canvas"></div>
-
-    <!-- Inhaltscontainer -->
-    <div id="map-content-wrapper" class="container pointer-events-none">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <!-- Button zum Anzeigen der Info -->
-                    <div id="btn-show-content" class="pointer-events-auto toggle-map-content">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Info anzeigen
-                    </div>
-                </div>
-                <div id="map-content" class="pointer-events-auto">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>Gutshof Börnicke - Bernauer Braugenossenschaft e.G.</h5>
-                            <p>Ernst-Thälmann-Str. 2c, 16321 Bernau bei Berlin</p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-md-12" style="padding: 5px;">
-                            <!-- Button zum Anzeigen der Karte -->
-                            <a class="btn btn-accent btn-small" id="btn-show-map">
-                                <i class="fa fa-map-marker"></i>&nbsp;&nbsp; Karte anzeigen
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center">
-        <h3>Wie komme ich zur Location und wieder zurück?</h3>
-        <p>Der Weg ist einfacher, als ihr denkt!<br>
-            Die <a href="https://www.braugenosse.de" target="_blank">Bernauer Braugenossenschaft</a>
-            befindet sich auf dem Gelände des Gutshauses Börnicke.
-            <br><br>
-            Auf dem Gelände der Braugenossen gibt es ausreichend Parkplätze.<br>
-            Wir möchten euch dennoch bitten, wenn möglich Fahrgemeinschaften zu bilden.<br>
-
-            Börnicke ist ca 10 min dem Auto bzw. 15 Min mit dem Rad von Bernau entfernt.<br>
-        <h5>Für diejenigen ohne Auto:</h5>
-        Es wird genügend Leute geben, die sicher den ein oder anderen Platz frei haben.<br>
-        <br>
-        <h5>Es gibt auch Taxiunternehmen</h5>
-        - <a href="https://www.funktaxi-bernau.de">Funktaxi Bernau:</a> <i class="fa fa-mobile"></i> <a href="tel://+4933388588">+49 3338 8588</a><br>
-        - <a href="https://www.mszet.com/preise">Taxi MSZet Bernau:</a> <i class="fa fa-mobile"></i> <a href="tel://+4933389171890">+49 3338 917 1890</a><br>
-        - <a href="https://www.taxi-jeske.de">Taxi Jeske:</a> <i class="fa fa-mobile"></i> <a href="tel://+49333838305">+49 3338 38305</a><br>
-        Tarif für die Strecke Bernau - Börnicke liegt bei ca. 15-20€.
-        <br><br>
-        <h5>Und für die Leute vom Land: </h5>
-        <p>Mit dem Fußtaxi dauert es, je nach Schlagseite, ca. 1h zurück in die Bernauer Innenstadt und zum S-Bahnhof.</p>
-    </div>
-</section>
-
-<section id="unterkunft" class="section-padding">
-    <div class="text-center">
-        <h3>Unterkünfte in und um Bernau</h3>
-        <h5>&#x1F4E3; Allgemeine Infos</h5>
-        Viele von euch werden zu unserem großen Tag eine weitere Anreise antreten.<br>
-        Vielleicht möchtet ihr Bernau und das Umland bei dieser Gelegenheit direkt noch etwas erkunden:<br> <a href="https://www.bernau-besuchen.de">Weitere Informationen zur Hussitenstadt Bernau</a> <br><br>
-        Um euch die Suche nach einer passenden Unterkunft zu erleichtern, haben wir euch im Folgenden ein paar nützliche Infos zusammengestellt.<br>
-
-        <h5>&#x1F3E8; Hotels &#x1F6CE;</h5>
-        - <a href="https://h24hotels.com/hotel-bernau/">H24 Stadthotel Bernau</a> Weißenseer Str. 6, 16321 Bernau bei Berlin<br>
-        - <a href="https://www.comfort-hotel-bernau.de">Comfort Hotel Bernau</a> Zepernicker Chaussee 39, 16321 Bernau bei Berlin<br>
-        - <a href="https://www.pension-hofgefluester.de/">Pension und Restaurant Hofgeflüster</a> Brüderstraße 14, 16321 Bernau bei Berlin<br>
-        <a href="https://www.bernau-besuchen.de/unterkuenfte.html">Weitere Unterkünfte in und um Bernau</a>
-        <br>
-        <p><h5>&#x1F690; Camping! &#x1F3D5;</h5>
-            Das Gelände der Braugenossen ist groß. Für Personen, die mit dem Camper anreisen, besteht die Möglichkeit, ganz bequem vor Ort zu stehen.<br>
-            <em>Die Abreise muss am Folgetag bis spätestens 12 Uhr erfolgen.</em><br>
-            Nach der Party muss die Versorgung im Wohnmobil autark erfolgen, da dann keine Zugänge zu Strom oder Toiletten möglich sind!
-    </div>
-</section>
-
-<section class="rsvp text-center" id="rsvp">
-
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Lieben Dank!</h3>
-                        <p>Wir freuen uns, mit dir unseren großen Tag zu verbringen!</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>Worauf wartet ihr?</h3>
-                <p>Wir würden uns sehr über eine Rückmeldung bis zum 28. Februar 2025 freuen!</p>
-                Ihr erreicht uns ganz einfach per Mail: <br><i class="fa fa-envelope"></i> <a href="mailto:hochzeit@lifa.social">hochzeit@lifa.social</a>
-
-                <!--<form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                     placeholder="Deine Mailadresse..."
-                                                                     required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Dein Name"
-                                                                 required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="2"
-                                                                  placeholder="Erwachsene Begleitperson"
-                                                                  required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="Einladungs-Code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Dein Einladungs-Code"
-                                                                required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        Ja,
-                        Das bin ich!
-                    </button>
-                </form>-->
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="faq" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <!-- https://www.getemojis.net/html/#Emoji-Liste -->
-                <h3>Ich habe da noch Fragen... (FAQ)</h3>
-                <h5>Wer sind die Trauzeug*innen? &#x1F465;</h5>
-                <p>Unsere Trauzeug*innen sind Lisa Fliegel und Tom Dumke.<br>
-                    Ihr habt noch Fragen oder Ideen? Die beiden helfen euch gerne weiter.
-                    Ihr erreicht sie ganz einfach per Mail: <br><i class="fa fa-envelope"></i> <a href="mailto:hochzeit@lifa.social">hochzeit@lifa.social</a><br>
-
-                    Euch ist anrufen oder WhatsApp lieber? Das geht auch.</p>
-
-                <h5>Wie sieht's aus mit Hochzeitsspielen? &#x1F3B2;</h5>
-                <p>Wenn ihr Spiele vorbereiten möchtet, klärt dies bitte mit unseren Trauzeug*innen ab. <br>
-                    Sie wissen, was und in welchem Umfang wir wollen und was nicht.</p>
-
-                <h5>Gibt es eine Geschenke-Wunschliste? &#127873;</h5>
-                <p>Wir möchten vor allem mit euch feiern und freuen uns, wenn ihr zu uns nach Bernau bei Berlin kommt.<br>
-                    Wenn ihr uns zusätzlich eine Freude machen wollt, freuen wir uns über eine Spende für weitere Bubbles-Abenteuer oder unser Haus-Projekt.</p>
-
-                <h5>Zu welcher Musik wird getanzt?  &#x1F3B8;&#129304;</h5>
-                <p> Das liegt ganz an euch! Unsere Hochzeit ist eine Mitmach-Party.<br>
-                    Schickt uns gern bis zu 3 Musikwünsche per Mail an <i class="fa fa-envelope"></i> <a href="mailto:hochzeit@lifa.social">hochzeit@lifa.social</a></p>
-
-                <h5>Darf ich mein Kind Bzw. meine Kinder mitbringen? &#x1F6B8;</h5>
-                <p>Wir möchten mit unseren Freunden und Familien ausgelassen feiern. <br>
-                    Auch wenn wir eure Kleinen lieben, soll unsere Hochzeit eine Party für Erwachsene sein.<br>
-                    Wir möchten euch also bitten, euch entsprechend zu organisieren und danken euch, dass ihr uns auf diese Weise unterstützt.<br>
-                    Für die Muttis, die stillen, haben wir natürlich Verständnis, dass es in dem Fall ohne Baby nicht geht.</p>
-
-                <h5>Ist meine +1 automatisch eingeladen? &#x1F48C;</h5>
-                <p>Wir hätten am liebsten noch mehr Leute eingeladen, aber die Kapazitäten in unserer Hochzeitslocation sind begrenzt. <br>
-                    Wir werden euch explizit sagen, ob euer Anhang auch eingeladen ist.<br>
-                    Bitte gebt trotzdem in eurer Rückmeldung an, wie viele Menschen mit euch kommen. Das hilft uns bei der Planung</p>
-
-                <h5>&#x2757; Bitte lasst Konfetti unbedingt Zuhause! &#x2757;</h5>
-                <p>
-                    Wir feiern auf einem denkmalgeschützten Gutshof mit viel Kopfsteinpflaster, dessen Reinigung extrem aufwändig ist. <br>
-                    Mit den Braugenossen mussten wir eine <strong>Strafzahlung von <em>100€</em> / Konfetti-Einsatz</strong> vereinbaren, die wir im Falle des Falls an euch weiterreichen werden.<br>
-                    <em>(Das Gleiche gilt für Reis oder Ähnliches!)</em><br>
-                    Aber keine Sorge, bunt wird es trotzdem &#x1F680;
-                </p>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="eng-pics" class="section-padding">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">Moments of Love</h3>
-                <p> <q><i>Ich lache für dich, wein' für dich<br>
-                    Ich regne und ich schein' für dich<br>
-                    Versetz' die ganze Welt für dich<br>
-                    Für dich und immer für dich<br>
-                    Für immer und dich</i></q> <br>
-                    <a href="https://youtu.be/A7TQuBEw8OY?si=hkz9ebjpdAD0HbN0&t=51">(Rio Reiser - Für immer und Dich!)</a>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_7515.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_7515_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_8583.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_8583_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_0237.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_0237_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_1666.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_1666_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_2590.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_2590_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_3751.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_3751_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_2454.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_2454_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/pic1_lg.jpg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/pic1_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/IMG_5909.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/IMG_5909_sm.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center content">
-                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
-                <p>Crafted by Fabian with lots of <span class="fa fa-heart pulse2"></span> for Lisa</p>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
-<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.mb.YTPlayer.min.js"></script>
-<script src="js/vendor/ouical.js"></script>
-<script src="js/scripts.min.js"></script>
-<script async defer
-        src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-</body>
+            document.onkeydown = function (e) {
+                e = e || window.event
+                if (e.keyCode == 13) {
+                    login(password[0].value)
+                }
+            }
+        </script>
+    </body>
 </html>
