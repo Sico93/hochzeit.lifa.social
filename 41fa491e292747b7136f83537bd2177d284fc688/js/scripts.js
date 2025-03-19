@@ -218,6 +218,17 @@ $(document).ready(function () {
 
     $('#add-to-cal').html(myCalendar);
 
+    /***************** Language Toggle ******************/
+    $('#language-toggle').click(function(e) {
+        e.preventDefault();
+        var currentPath = window.location.pathname;
+        if (currentPath.includes('da.html')) {
+            window.location.href = 'index.html';
+        } else {
+            window.location.href = 'da.html';
+        }
+    });
+
 });
 
 /********************** Extras **********************/

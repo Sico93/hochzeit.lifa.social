@@ -1,0 +1,512 @@
+<!doctype html>
+<html class="no-js" lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Lisa & Fabian gifter sig!</title>
+    <meta name="description" content="Vi vil gerne invitere dig til vores store dag!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Lisa & Fabian gifter sig">
+    <meta property="og:description" content="Vi vil gerne invitere dig til vores store dag!">
+    <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-min.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body id="top">
+<section class="hero">
+    <section class="navigation">
+        <header>
+            <div class="header-content">
+                <div class="logo"><a href="#"><img src="img/logo.png" alt="LiFa Bryllup - Logo"></a></div>
+                <div class="header-nav">
+                    <nav>
+                        <ul class="primary-nav">
+                            <li><a href="#intro">Vores Rejse</a></li>
+                            <li><a href="#events">Events</a></li>
+                            <li><a href="#map" class="login">Lokation</a></li>
+                            <li><a href="#unterkunft">Overnatning</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#eng-pics">Billeder</a></li>
+                            <li><a href="index.html" id="language-toggle" class="language-toggle">🇩🇪</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="navicon">
+                    <a class="nav-toggle" href="#"><span></span></a>
+                </div>
+            </div>
+        </header>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="hero-content text-center">
+                    <h1>LiFa Bryllup!</h1>
+                    <p class="intro">Lizzie & Fabian<br> gifter sig!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+</section>
+
+<section id="invitation" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p> <q><i>Det er disse øjeblikke,
+                    hvor jeg, hvis jeg kunne,
+                    ønskede at de aldrig ville forsvinde.</i></q> <br>
+                    <a href="https://youtu.be/T9YwNyX6Bes?si=RMpHoO8yFxZOcRMm&t=32">(Dritte Wahl - Zeit bleib stehen!)</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Vi gifter os!</h3>
+                <p>Den 12. april 2025 vil vi sige ja til hinanden, og vi vil være glade for at have dig med!</p>
+                <div id="add-to-cal"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Vores fælles rejse</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/Lisa6_white.png" class="wp1"></div>
+            <div class="col-md-6 hidden-sm hidden-xs">
+                <p>
+                    Egentlig ledte ingen af os efter nogen, men vores venner genkendte potentialet og gav ikke op - og det med succes!<br>
+
+                    Kun et halvt år efter vi mødtes, købte vi en brugt varevogn og byggede den om til en campingvogn gennem årene.<br>
+                    Man vokser jo med sine opgaver...<br>
+                    Siden da har vi regelmæssigt været på tur med <a href="https://pixelfed.de/lifawagen">Bubbles On Tour.</a>
+                    Vi har vist hinanden steder fyldt med smukke minder - i Frankrig og i Danmark.
+                    Men mest af alt har vi opdaget mange nye "LiFa"-yndlingssteder.<br>
+                    Og selv efter 9 uger og 5.994 km på 7m² boligareal gennem det vestlige Balkan blev vi ikke trætte af hinanden.<br>
+                    Da var det klart: Vi går på "rejse" sammen - for evigt!<br>
+                    <br>
+                    Vi har set meget og har meget mere foran os.<br>
+                    Men én ting er sikkert:<br>
+                    <strong>Der er masser af <em>KÆRLIGHED</em> - og en lille smule kaos.</strong>
+                </p>
+            </div>
+            <div class="col-md-6 hidden-md hidden-lg">
+                <p>
+                    Egentlig ledte ingen af os efter nogen, men vores venner genkendte potentialet og gav ikke op - og det med succes!<br>
+
+                    Kun et halvt år efter vi mødtes, købte vi en brugt varevogn og byggede den om til en campingvogn gennem årene.<br>
+                    Siden da har vi regelmæssigt været på tur med <a href="https://pixelfed.de/lifawagen">Bubbles On Tour.</a><br>
+                    <br>
+                    Vi har set meget og har meget mere foran os.<br>
+                    Men én ting er sikkert:<br>
+                    <strong>Der er masser af <em>KÆRLIGHED</em> - og en lille smule kaos.</strong>
+                </p>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/Fabi6_white.png" class="wp2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/Lisa6_white.png" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/Fabi6_white.png" class="wp9"></div>
+        </div>
+    </div>
+</section>
+
+<section class="events section-padding" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="header">Events</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                <div class="wp3">
+                    <p><strong>23. marts 2025</strong></p>
+
+                    <h5>Polter-Frühshoppen <span class="time">11 - 20</span></h5>
+                    <p>Vi vil gerne holde en Polter-Frühshoppen med jer!
+                        Bring porcelæn og godt humør med til gården Kenning-Feldmann i Halverde og fejr den traditionelle polter-tradition med os!
+                        <br>Skår bringer lykke &#128521;</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                <div class="wp4">
+                    <p><strong>12. april 2025</strong></p>
+
+                    <h5>Vielse <span class="time">13</span></h5>
+                    <p>Klokken 13 finder vielsen sted på rådhuset i Bernau ved Berlin.
+                    På grund af det begrænsede antal pladser vil der blive sendt individuelle invitationer ud.<br>
+                    Alle andre gæster er velkomne klokken 15 direkte til bryllupslokationen</p>
+                </div>
+                <div class="wp6">
+                    <h5>Fest <span class="time">fra 15</span></h5>
+                    <p>Fra klokken 15 mødes vi hos Braugenossen i Börnicke til festen!
+                        Vi starter med champagne. <br>
+                        Glæd jer til: lækker mad (kaffe og kage, aftensmad og midnatssnack), lokale øl og andre drikkevarer, en bryggeri-tur (for interesserede) og selvfølgelig en festlig fest.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row section-padding">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code / Tøj
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Ugh... dress codes?</h3>
+                    <h5>Polter <span class="time">23.03.2025 fra 11</span></h5>
+                    <p>
+                        <strong>Afslappet</strong>
+                        <br>
+                        Vi vil gerne poltere med jer ved en afslappet frokost.<br>
+                        Så alt helt afslappet, lad jeres fine jakkesæt og kjoler blive i skabet denne dag.<br>
+                        Husk at tage varmt tøj med, afhængigt af vejret.
+                    </p>
+                    <h5>Bryllupsfest <span class="time">12.04.2025 fra 15</span></h5>
+                    <p>
+                        <strong>Pænt og afslappet</strong>
+                        <br>
+                        Vi vil gerne fejre en afslappet fest med jer på Braugenossen's område. <br>
+                        Kom gerne pænt og afslappet klædt - elegant aftenbeklædning er i denne kontekst lidt for meget. <br>
+                        Braugenossen's område er stort, og om aftenen vil der være bål. Så tag også tøj med til udendørs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="map" class="section-padding">
+    <div id="map-canvas"></div>
+    <div id="map-content-wrapper" class="container pointer-events-none">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                <div class="text-center">
+                    <div id="btn-show-content" class="pointer-events-auto toggle-map-content">
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Vis info
+                    </div>
+                </div>
+                <div id="map-content" class="pointer-events-auto">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Gutshof Börnicke - Bernauer Braugenossenschaft e.G.</h5>
+                            <p>Ernst-Thälmann-Str. 2c, 16321 Bernau ved Berlin</p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12" style="padding: 5px;">
+                            <a class="btn btn-accent btn-small" id="btn-show-map">
+                                <i class="fa fa-map-marker"></i>&nbsp;&nbsp; Vis kort
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <h3>Hvordan kommer jeg til lokationen og hjem igen?</h3>
+        <p>Det er nemmere end du tror!<br>
+            <a href="https://www.braugenosse.de" target="_blank">Bernauer Braugenossenschaft</a>
+            ligger på området ved Gutshaus Börnicke.
+            <br><br>
+            Der er masser af parkeringspladser på Braugenossen's område.<br>
+            Vi opfordrer dog til at danne fællesskab, hvis det er muligt.<br>
+
+            Börnicke er ca. 10 minutter med bil eller 15 minutter med cykel fra Bernau.<br>
+        <h5>For dem uden bil:</h5>
+        Der vil være masser af mennesker, der har plads til en ekstra person.<br>
+        <br>
+        <h5>Der er også taxaselskaber</h5>
+        - <a href="https://www.funktaxi-bernau.de">Funktaxi Bernau:</a> <i class="fa fa-mobile"></i> <a href="tel://+4933388588">+49 3338 8588</a><br>
+        - <a href="https://www.mszet.com/preise">Taxi MSZet Bernau:</a> <i class="fa fa-mobile"></i> <a href="tel://+4933389171890">+49 3338 917 1890</a><br>
+        - <a href="https://www.taxi-jeske.de">Taxi Jeske:</a> <i class="fa fa-mobile"></i> <a href="tel://+49333838305">+49 3338 38305</a><br>
+        Prisen for turen Bernau - Börnicke er ca. 15-20€.
+        <br><br>
+        <h5>Og for landboerne: </h5>
+        <p>Med fodtaxi tager det, afhængigt af din tilstand, ca. 1 time tilbage til Bernaus centrum og S-banestationen.</p>
+    </div>
+</section>
+
+<section id="unterkunft" class="section-padding">
+    <div class="text-center">
+        <h3>Overnatning i og omkring Bernau</h3>
+        <h5>&#x1F4E3; Generelle informationer</h5>
+        Mange af jer vil have en længere rejse til vores store dag.<br>
+        Måske vil I også udforske Bernau og omegnen ved denne lejlighed:<br> <a href="https://www.bernau-besuchen.de">Flere informationer om Hussit-byen Bernau</a> <br><br>
+        For at gøre det nemmere at finde passende overnatning, har vi samlet nogle nyttige informationer herunder.<br>
+
+        <h5>&#x1F3E8; Hoteller &#x1F6CE;</h5>
+        - <a href="https://h24hotels.com/hotel-bernau/">H24 Stadthotel Bernau</a> Weißenseer Str. 6, 16321 Bernau ved Berlin<br>
+        - <a href="https://www.comfort-hotel-bernau.de">Comfort Hotel Bernau</a> Zepernicker Chaussee 39, 16321 Bernau ved Berlin<br>
+        - <a href="https://www.pension-hofgefluester.de/">Pension og Restaurant Hofgeflüster</a> Brüderstraße 14, 16321 Bernau ved Berlin<br>
+        <a href="https://www.bernau-besuchen.de/unterkuenfte.html">Flere overnatningsmuligheder i og omkring Bernau</a><br><br>
+        <br>
+        <p><h5>&#x1F690; Camping! &#x1F3D5;</h5>
+            Braugenossen's område er stort. For personer, der ankommer med campingvogn, er der mulighed for at overnatte på stedet.<br>
+            <em>Afrejse skal ske senest klokken 12 dagen efter.</em><br>
+            Efter festen skal forsyningen i campingvognen være selvstændig, da der ikke er adgang til strøm eller toiletter!
+    </div>
+</section>
+
+<section class="rsvp text-center" id="rsvp">
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Mange tak!</h3>
+                        <p>Vi glæder os til at fejre vores store dag med dig!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>Hvad venter du på?</h3>
+                <p>Vi vil være glade for at modtage din tilmelding senest den 28. februar 2025!</p>
+                Du kan nå os nemt på mail: <br><i class="fa fa-envelope"></i> <a href="mailto:lifahochzeit@posteo.de?subject=Rückmeldung LiFa-Hochzeit">lifahochzeit@posteo.de</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Jeg har stadig spørgsmål... (FAQ)</h3>
+                <h5>Hvem er vidnerne? &#x1F465;</h5>
+                <p>Vores vidner er Lisa Fliegel og Tom Dumke.<br>
+                    Har du stadig spørgsmål eller idéer? De hjælper dig gerne videre.
+                    Du kan nå dem på mail: <br><i class="fa fa-envelope"></i> <a href="mailto:hochzeit@lifa.social">hochzeit@lifa.social</a><br>
+                    Du kan få deres telefonnumre på mail &#x1F4DE;
+                </p>
+
+                <h5>Hvad med bryllupslege? &#x1F3B2;</h5>
+                <p>Hvis du vil forberede lege, skal du venligst aftale det med vores vidner. <br>
+                    De ved, hvad og i hvilket omfang vi ønsker og ikke ønsker.</p>
+
+                <h5>Er der en ønskeliste? &#127873;</h5>
+                <p>Vi vil mest af alt fejre med jer og er glade for, at I kommer til Bernau ved Berlin.<br>
+                    Hvis I også vil gøre os glade, er vi glade for en donation til flere Bubbles-eventyr eller vores hus-projekt.</p>
+
+                <h5>Hvilken musik danser vi til?  &#x1F3B8;&#129304;</h5>
+                <p> Det afhænger helt af jer! Vores bryllup er en deltagerfest.<br>
+                    Send gerne op til 3 musikønsker på mail til <i class="fa fa-envelope"></i> <a href="mailto:hochzeit@lifa.social">hochzeit@lifa.social</a></p>
+
+                <h5>Må jeg tage mit barn/børn med? &#x1F6B8;</h5>
+                <p>Vi vil gerne fejre en festlig fest med vores venner og familie. <br>
+                    Selvom vi elsker jeres små, skal vores bryllup være en fest for voksne.<br>
+                    Vi opfordrer jer derfor til at organisere jer i overensstemmelse hermed og takker jer for jeres forståelse.<br>
+                    For mødre, der ammer, har vi selvfølgelig forståelse for, at det ikke kan undgås uden baby.</p>
+
+                <h5>Er min +1 automatisk inviteret? &#x1F48C;</h5>
+                <p>Vi ville helst have inviteret flere mennesker, men kapaciteten i vores bryllupslokation er begrænset. <br>
+                    Vi vil fortælle jer specifikt, om jeres partner også er inviteret.<br>
+                    Men vær venlig at angive i jeres tilmelding, hvor mange mennesker der kommer med jer. Det hjælper os med planlægningen</p>
+
+                <h5>&#x2757; Lad venligst konfetti blive hjemme! &#x2757;</h5>
+                <p>
+                    Vi fejrer på en fredet herregård med meget brosten, hvis rengøring er ekstremt besværlig. <br>
+                    Med Braugenossen har vi aftalt en <strong>bøde på <em>100€</em> / konfetti-brug</strong>, som vi i så fald vil videregive til dig.<br>
+                    <em>(Det samme gælder for ris eller lignende!)</em><br>
+                    Men ingen bekymring, det bliver stadig farverigt &#x1F680;
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="eng-pics" class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Kærlighedsøjeblikke</h3>
+                <p> <q><i>Jeg griner for dig, græder for dig<br>
+                    Jeg regner og jeg skinner for dig<br>
+                    Flytter hele verden for dig<br>
+                    For dig og altid for dig<br>
+                    For evigt og dig</i></q> <br>
+                    <a href="https://youtu.be/A7TQuBEw8OY?si=hkz9ebjpdAD0HbN0&t=51">(Rio Reiser - Für immer und Dich!)</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_7515.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_7515_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_8583.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_8583_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_0237.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_0237_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_1666.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_1666_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_2590.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_2590_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_3751.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_3751_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_2454.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_2454_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/pic1_lg.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/pic1_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_5909.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_5909_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="sm-12 text-center content">
+                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                <p>Lavet af Fabian med masser af <span class="fa fa-heart pulse2"></span> til Lisa</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<script src="js/scripts.min.js"></script>
+<script async defer
+        src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html> 

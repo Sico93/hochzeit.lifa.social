@@ -364,3 +364,14 @@
         padding-top: 20px;
     }
 }
+
+.language-toggle {
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: opacity 0.3s ease;
+}
+
+.language-toggle:hover {
+    opacity: 0.8;
+}
