@@ -219,13 +219,16 @@ $(document).ready(function () {
     $('#add-to-cal').html(myCalendar);
 
     /***************** Language Toggle ******************/
-    $('#language-toggle').click(function(e) {
+    $('#language-toggle, #language-toggle-da, #language-toggle-fr').click(function(e) {
         e.preventDefault();
         var currentPath = window.location.pathname;
-        if (currentPath.includes('da.html')) {
+        var targetLang = $(this).attr('href');
+        
+        // Wenn wir auf der aktuellen Seite sind, wechseln wir zur Standardsprache (Deutsch)
+        if (currentPath.includes(targetLang)) {
             window.location.href = 'index.html';
         } else {
-            window.location.href = 'da.html';
+            window.location.href = targetLang;
         }
     });
 
